@@ -1,0 +1,9 @@
+ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+li{
+    border: 1px solid black;
+}
