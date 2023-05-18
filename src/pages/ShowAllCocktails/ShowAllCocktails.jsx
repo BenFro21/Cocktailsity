@@ -8,13 +8,13 @@ const ShowAllCocktails = () => {
     const [cocktails, setCocktails] = useState()
     useEffect(() => {
         axios.get(`${BACKEND_URL}cocktails/`)
-        // .then(res => res.json())
         .then(data => setCocktails(data))
+        .catch(err => console.log(err))
     }, [])
-    console.log(cocktails.data)
+    console.log(cocktails)
   return (
     <>
-        {cocktails.data.map((cocktail) => {
+        {cocktails?.data?.map((cocktail) => {
             return (<div className='container'>
                 <h1>{cocktail.title}</h1>
                 <p>{cocktail.description}</p>

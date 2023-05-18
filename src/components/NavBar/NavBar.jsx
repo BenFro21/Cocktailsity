@@ -2,13 +2,14 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import './NavBar.css'
 
+
 const NavBar = () => {
   return (
     <div>
         <ul>
-            <button><Link to='/cocktails'>Cocktails</Link></button>
-            <li><Link to='/cocktails/nex'>New Cocktail</Link></li>
-            <li>Sign in</li>
+            <button className='navBar'><Link to='/cocktails'>Cocktails</Link></button>
+            <button><Link to='/cocktails/new'>New Cocktail</Link></button>
+            <button onClick={localStorage.removeItem('token')}><Link to='/'>Log out</Link></button>
         </ul>
     </div>
   )
