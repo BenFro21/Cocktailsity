@@ -6,7 +6,7 @@ import tokenService from '../../utils/tokenAuth';
 let {setToken} = tokenService
 const BACKEND_URL = 'http://localhost:9000/'
 
-const LandingPage = ({handleLogin, handleRegister}) => {
+const LandingPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -51,6 +51,7 @@ const LandingPage = ({handleLogin, handleRegister}) => {
           console.log(res);
           const { token } = res.data; // Check the response structure and adjust accordingly
           setToken(token);
+          window.location.reload(true)
         })
         .catch((err) => console.log(err));
       console.log('log in success!');
