@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {useParams, Link} from 'react-router-dom'
+import {useParams, Link, Navigate} from 'react-router-dom'
 import axios from 'axios'
 
 let BACKEND_URL = 'http://localhost:9000/'
@@ -14,6 +14,11 @@ const [cocktail, setCocktail] = useState()
     .catch(err => console.log(err))
    }, [])
    console.log(cocktail?.data)
+
+   let deleteCocktail = () => {
+    axios.delete(`${BACKEND_URL}cocktails/${cocktailId}`)
+    // Navigate('/cocktails', {replace: true})
+   }
   return (
     
     <>
@@ -32,6 +37,7 @@ const [cocktail, setCocktail] = useState()
                 </ul>
                 <img src={c.image} alt='cocktail'/>
                 <button><Link to={`/cocktails/edit/${cocktailId}`}>Edit</Link></button>
+                <button onClick={deleteCocktail}>Delete</button>
                 </div>
             )
         })}
