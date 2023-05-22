@@ -14,9 +14,11 @@ const NavBar = () => {
   return (
     <div>
         <ul>
-            <button className='navBar'><Link to='/cocktails'>Cocktails</Link></button>
-            <button><Link to='/cocktails/new'>New Cocktail</Link></button>
-            <button  onClick={handleLogout}><Link to='/'>Log out</Link></button>
+            <Link className='navbarLink' to='/cocktails'>Cocktails</Link>
+            <Link  className='navbarLink' to='/cocktails/new'>New Cocktail</Link>
+            <Link  className='navbarLink' to='/ingredients'>Ingredients</Link>
+            <Link  className='navbarLink' to='/ingredients/new'>New Ingredient</Link>
+            <Link onClick={handleLogout} className='navbarLink' to='/'>Log out</Link>
         </ul>
     </div>
   )

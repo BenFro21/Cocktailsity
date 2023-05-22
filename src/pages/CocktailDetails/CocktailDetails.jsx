@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import {useParams, Link, Navigate} from 'react-router-dom'
+import {useParams, Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 
 let BACKEND_URL = 'http://localhost:9000/'
 
 const CocktailDetails = () => {
-const [cocktail, setCocktail] = useState()
+    const [cocktail, setCocktail] = useState()
+    const navigate = useNavigate()
    let {cocktailId} = useParams();
    console.log(cocktailId)
    useEffect(() => {
@@ -17,7 +18,7 @@ const [cocktail, setCocktail] = useState()
 
    let deleteCocktail = () => {
     axios.delete(`${BACKEND_URL}cocktails/${cocktailId}`)
-    // Navigate('/cocktails', {replace: true})
+    navigate('/cocktails', {replace: true})
    }
   return (
     
@@ -35,9 +36,9 @@ const [cocktail, setCocktail] = useState()
                     )
                 })}
                 </ul>
-                <img src={c.image} alt='cocktail'/>
-                <button><Link to={`/cocktails/edit/${cocktailId}`}>Edit</Link></button>
-                <button onClick={deleteCocktail}>Delete</button>
+                <img src={c.image ? c.image : 'https://drive.google.com/uc?export=download&id=1WEDZeBgHnGUceTGksr4dlzMRDnoD6AOB'} alt='cocktail'/>
+                <button className='cocktailsButton'><Link className='cocktailsLink' to={`/cocktails/edit/${cocktailId}`}>Edit</Link></button>
+                <button className='cocktailsButton' onClick={deleteCocktail}>Delete</button>
                 </div>
             )
         })}

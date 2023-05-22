@@ -1,17 +1,20 @@
 import React, {useState} from 'react'
-import {Navigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import tokenService from '../../utils/tokenAuth'
 import axios from 'axios'
+import './NewCocktail.css'
 let {getToken} = tokenService
 let BACKEND_URL = 'http://localhost:9000/'
 // let {title, description, recipe, image} = req.body
 const NewCocktail = () => {
 let token = getToken();
+let navigate = useNavigate()
 const initalState = {
     title: '',
     description: '',
     recipe: '',
-    image: ''
+    image: '',
+ 
 }
 let [formData, setFormData] = useState(initalState)
 
@@ -25,8 +28,7 @@ let handleSubmit = async (e) => {
         axios.post(`${BACKEND_URL}cocktails/`, formData, {headers: {'content-type': 'application/json', token: token}})
         .then(res => {
             setFormData(initalState)
-            console.log(token)
-            // Navigate('/cocktails', {replace:true})
+            navigate('/cocktails', {replace:true})
         })
     }catch(err){
         console.log('From handleSubmit in new cocktail form', err)
@@ -36,20 +38,20 @@ let handleSubmit = async (e) => {
 
   return (
     <>
-    <form onSubmit={handleSubmit}>
-        <label for='title'>Title</label>
-        <input id='title' type='text' placeholder='title' value={formData.title} name='title' onChange={handleChange} />
+    <form className='cocktailForm' onSubmit={handleSubmit}>
+        <label className='cocktailLabel' htmlFor='title'>Title</label>
+        <input className='cocktailInput' id='title' type='text' placeholder='title' value={formData.title} name='title' onChange={handleChange} />
 
-        <label for='description'>Description</label>
-        <input id='description' type='text' placeholder='description' value={formData.description} name='description' onChange={handleChange} />
+        <label className='cocktailLabel' htmlFor='description'>Description</label>
+        <input className='cocktailInput' id='description' type='text' placeholder='description' value={formData.description} name='description' onChange={handleChange} />
 
-        <label for='recipe'>Recipe</label>
-        <input id='recipe' type='text' placeholder='recipe' value={formData.recipe} name='recipe' onChange={handleChange} />
+        <label className='cocktailLabel' htmlFor='recipe'>Recipe</label>
+        <input className='cocktailInput' id='recipe' type='text' placeholder='recipe' value={formData.recipe} name='recipe' onChange={handleChange} />
 
-        <label for='image'>Picture</label>
-        <input id='image' type='text' placeholder='image' value={formData.image} name='image' onChange={handleChange} />
+        <label className='cocktailLabel' htmlFor='image'>Picture</label>
+        <input className='cocktailInput' id='image' type='text' placeholder='image' value={formData.image} name='image' onChange={handleChange} />
 
-        <input type="submit" value="Submit" />
+        <input className='cocktailSubmit' type="submit" value="Submit" />
     </form>
 
     </>

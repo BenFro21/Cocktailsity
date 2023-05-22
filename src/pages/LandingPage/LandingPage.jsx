@@ -7,6 +7,7 @@ let {setToken} = tokenService
 const BACKEND_URL = 'http://localhost:9000/'
 
 const LandingPage = () => {
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -36,6 +37,7 @@ const LandingPage = () => {
             console.log(res);
             const { token } = res.data; // Check the response structure and adjust accordingly
             setToken(token);
+
           })
           .catch((err) => console.log(err));
         console.log('Registration success!');
