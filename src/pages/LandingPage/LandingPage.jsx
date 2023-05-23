@@ -66,6 +66,7 @@ const LandingPage = () => {
   };
 
   return (
+    
     <div className='formContainer'>
       <h1 className='formTitle'>{isRegistering ? 'Register' : 'Login'}</h1>
       <button className='toggleBtn' onClick={handleToggleMode}>
@@ -103,8 +104,8 @@ const LandingPage = () => {
         )}
         <button className='submitBtn' type="submit" onClick={handleSubmit}>{isRegistering ? 'Register' : 'Login'}</button>
       </form>
-  
     </div>
+   
   );
 };
 

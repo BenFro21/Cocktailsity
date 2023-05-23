@@ -1,10 +1,14 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
+import './ShowAllIngredients.css'
+
 
 let BACKEND_URL = 'http://localhost:9000/'
 
 
 const ShowAllIngredients = () => {
+
+
     const [ingredients, setIngredients] = useState()
     useEffect(() => {
         axios.get(`${BACKEND_URL}ingredients/`)
@@ -16,6 +20,7 @@ const ShowAllIngredients = () => {
       axios.delete(`${BACKEND_URL}ingredients/${id}`)
       .then((res) => {
         console.log(res)
+        window.location.reload(true)
       })
     }
 
@@ -25,8 +30,10 @@ const ShowAllIngredients = () => {
       
         return (
             <>
+            <div className='ingredientContainer'>
             <h1 className='ingredientName'>{ingredient.name}</h1>
-            <button className='deleteButton' onClick={() => deleteIngredient(ingredient.ingredient_id)}>Delete me</button>
+            <button className='deleteBtn' onClick={() => deleteIngredient(ingredient.ingredient_id)}>Delete</button>
+            </div>
             </>
         )
     })}

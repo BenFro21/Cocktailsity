@@ -1,0 +1,38 @@
+.ingredientContainer{
+    width: 25%;
+   
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    vertical-align: top;
+    background-size: cover;
+    background-position: center;
+    border: 3px solid #b69121;
+    margin: 3px;
+    border-radius: 24px;
+    
+}
+
+.ingredientName{
+    text-decoration: underline;
+    font-weight: 900;
+    color:#b69121;
+}
+
+.deleteBtn{
+    border: none; /* Remove borders */
+    color: white; /* Add a text color */
+    padding: 14px 14px; 
+    cursor: pointer; /* Add a pointer cursor on mouse-over */
+    border-radius: 12px;
+    width:125px;
+    height: fit-content;
+    text-decoration: none;
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+.deleteBtn {background-color: red;} /* Blue */
+.deleteBtn:hover {background: orangered;}

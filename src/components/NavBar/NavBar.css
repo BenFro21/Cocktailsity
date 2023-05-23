@@ -1,8 +1,11 @@
+.navContainer{
+
+}
+
 ul{
     list-style-type: none;
     display: flex;
-    justify-content: space-evenly;
-    /* padding-bottom: 100px; */
+    justify-content:space-around;
 }
 
 
@@ -16,10 +19,11 @@ ul{
     width:150px;
     text-decoration: none;
     font-size: 16px;
-    margin-bottom: 10px;
-
-      
+    margin-bottom: 50px;
 }
 
 .navbarLink {background-color: #2196F3;} /* Blue */
-.navbarLink:hover {background: #0b7dda;}
+.navbarLink:hover {
+    background: #0b7dda;
+    opacity: 30%;
+}

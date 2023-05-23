@@ -12,25 +12,19 @@ const ShowAllCocktails = () => {
         .then(data => setCocktails(data))
         .catch(err => console.log(err))
     }, [])
-    // console.log(cocktails.data.cocktail_id)
-    // cocktails?.data?.map((c) => {
-    //    return console.log(c)
-    // })
+
   return (
     <>
+    <h1 className='bigCocktails'>Cocktails</h1>
         {cocktails?.data?.map((cocktail, index) => {
            
-            return (<div className='cocktailsContainer'>
-                
+            return (
+                <div className='cocktailsContainer'>
                 <h1 className='cocktailsTitle' >{cocktail.title}</h1>
                 <p className='cocktailsP'>{cocktail.description}</p>
-                  {/* Can i do this better? */}
                 <button className='cocktailsButton'><Link className='cocktailsLink' to={`/cocktails/${cocktail?.cocktail_id}`}>Cocktail Details</Link></button>
                 <br/>
                 <img className='cocktailsImg' src={cocktail.image ? cocktail.image : 'https://drive.google.com/uc?export=download&id=1WEDZeBgHnGUceTGksr4dlzMRDnoD6AOB'} alt='cocktail'/>
-                
-
-              
             </div>)
         })}
     </>

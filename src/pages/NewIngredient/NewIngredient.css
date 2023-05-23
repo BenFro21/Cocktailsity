@@ -1,33 +1,28 @@
-/* Center the form on the screen */
 .cocktailForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 50vh;
-  }
-  
-  /* Style the labels */
-  .cocktailLabel {
+}
+.ingredientLabel{
     font-weight: bold;
     margin-bottom: 10px;
     font-size: 24px;
-    color:#b69121;
-  }
-  
-  /* Style the input fields */
-  .cocktailInput {
+    color: #b69121;
+}
+
+.ingredientInput{
     padding: 5px;
     margin-bottom: 10px;
-    width: 500px;
-    height: 200px;
+    width: 200px;
+    height: 25px;
     border-radius: 24px;
     text-align: center;
     border:1px solid #3498db;
-  }
-  
-  /* Style the submit button */
-  .cocktailSubmit  {
+}
+
+.ingredientSubmit  {
     padding: 10px 20px;
     background-color: #3498db;
     color: #fff;
@@ -36,7 +31,7 @@
   }
   
   /* Add hover effect to the submit button */
-  .cocktailSubmit:hover {
+  .ingredientSubmit:hover {
     background-color: #2980b9;
   }
   

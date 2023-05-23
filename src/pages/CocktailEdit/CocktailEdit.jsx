@@ -9,7 +9,7 @@ let {getToken} = tokenService
 const CocktailEdit = () => {
   let navigate = useNavigate();
   let token = getToken()
-const [cocktail, setCocktail] = useState()
+  const [cocktail, setCocktail] = useState()
    let {cocktailId} = useParams();
    console.log(cocktailId)
    useEffect(() => {
@@ -18,24 +18,23 @@ const [cocktail, setCocktail] = useState()
     .catch(err => console.log(err))
    }, [])
 
-   const initalState = {
+    const initalState = {
     title: cocktail?.data[0].title,
     description: cocktail?.data[0].description,
     recipe: cocktail?.data[0].recipe,
     image: cocktail?.data[0].image,
-    
 }
-   let [formData, setFormData] = useState(initalState)
+
+  let [formData, setFormData] = useState(initalState)
  
-   let handleChange = (e) => {
-      setFormData({...initalState})
-       setFormData({...formData, [e.target.name] : e.target.value})
+  let handleChange = (e) => {
+      setFormData({...formData, [e.target.name] : e.target.value ? e.target.value : e.target.placeholder})
    }
    
-   let handleSubmit = async (e) => {
-       e.preventDefault()
-       try {
-           axios.put(`${BACKEND_URL}cocktails/${cocktail?.data[0].cocktail_id}`, formData, {headers: {'content-type': 'application/json', token: token}})
+  let handleSubmit = async (e) => {
+      e.preventDefault()
+      try {
+        axios.put(`${BACKEND_URL}cocktails/${cocktail?.data[0].cocktail_id}`, formData, {headers: {'content-type': 'application/json', token: token}})
            .then(res => {
                setFormData(initalState)
                navigate('/cocktails', {replace:true})
@@ -44,16 +43,10 @@ const [cocktail, setCocktail] = useState()
            console.log('From handleSubmit in new cocktail form', err)
        }
    }
-
-console.log(cocktail?.data[0].cocktail_id)
-console.log(formData?.title)
-console.log(initalState)
-  
-//           let {user_id, title, description, recipe, image} = req.body
   return (
     <>
     <h1>{cocktail?.data[0].title}</h1>
-    <form className='cocktailForm' onSubmit={handleSubmit}>
+      <form className='cocktailForm' onSubmit={handleSubmit}>
         <label className='cocktailLabel' htmlFor='title'>Title</label>
         <input className='cocktailInput' id='title' type='text' placeholder={cocktail?.data[0].title} value={formData?.title} name='title' onChange={handleChange} />
 
@@ -68,7 +61,6 @@ console.log(initalState)
 
         <input className='cocktailSubmit' type="submit" value="Submit" />
     </form>
-
     </>
   )
 }

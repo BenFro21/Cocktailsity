@@ -34,8 +34,6 @@ let handleSubmit = async (e) => {
         console.log('From handleSubmit in new cocktail form', err)
     }
 }
-// let {title, description, recipe, image} = req.body
-
   return (
     <>
     <form className='cocktailForm' onSubmit={handleSubmit}>

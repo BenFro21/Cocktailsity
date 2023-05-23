@@ -7,8 +7,9 @@ import CocktailDetails from './pages/CocktailDetails/CocktailDetails';
 import CocktailEdit from './pages/CocktailEdit/CocktailEdit';
 import NewCocktail from './pages/NewCocktail/NewCocktail';
 import ShowAllIngredients from './pages/ShowAllIngredients/ShowAllIngredients';
+import NewIngredient from './pages/NewIngredient/NewIngredient';
 import './App.css'
-let {getToken, removeToken} =tokenService
+let {getToken} =tokenService
 
 let token = getToken()
 
@@ -27,6 +28,7 @@ function App() {
           <Route path='/cocktails/:cocktailId' element={ token? <CocktailDetails /> : <Navigate to='/'/>} />
           <Route path='/cocktails/edit/:cocktailId' element={token? <CocktailEdit /> : <Navigate to='/'/>} />
           <Route path='/ingredients' element={token? <ShowAllIngredients /> :  <Navigate to='/' />} />
+          <Route path='/ingredients/new' element={token? <NewIngredient /> : <Navigate to='/' />} />
         </Routes>
       </Layout>
     </div>
