@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
 import tokenService from '../../utils/tokenAuth'
+import './CocktailEdit.css'
 
 let BACKEND_URL = 'http://localhost:9000/'
 let {getToken} = tokenService
@@ -45,7 +46,7 @@ const CocktailEdit = () => {
    }
   return (
     <>
-    <h1>{cocktail?.data[0].title}</h1>
+    <h1 className='edit'>{cocktail?.data[0].title}</h1>
       <form className='cocktailForm' onSubmit={handleSubmit}>
         <label className='cocktailLabel' htmlFor='title'>Title</label>
         <input className='cocktailInput' id='title' type='text' placeholder={cocktail?.data[0].title} value={formData?.title} name='title' onChange={handleChange} />

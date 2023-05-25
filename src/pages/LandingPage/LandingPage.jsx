@@ -37,6 +37,7 @@ const LandingPage = () => {
             console.log(res);
             const { token } = res.data; // Check the response structure and adjust accordingly
             setToken(token);
+            alert('Regiistration Success!')
 
           })
           .catch((err) => console.log(err));
