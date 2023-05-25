@@ -1,70 +1,171 @@
-# Getting Started with Create React App
+<div id="top"></div>
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/BenFro21/cocktailsity">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h3 align="center">Cocktailsity</h3>
+  <p align="center">
+    A cocktail reccipe app. Create, Read, Update, and Destroy cocktails 
+    <br />
+    <a href=<a href="https://github.com/BenFro21/cocktailsity">View Demo</a>
+</div>
 
-### `npm run build`
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Built With
+### Frontend
+* React 
+* JavaScript
+* CSS
+* J.W.T
+* react-router-dom
+### Backend
+* Node.js
+* Express
+* Sequilize
+* JWT auth 
 
-## Learn More
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# What I Learned 
+* Postgresql relational Database was the way to go. The connections between tables was a great way to get data back. 
+* React project always take me somewhere new. I learn something new and more powerful everytime I make a react app 
+* I felt great writeing the backend code for this project it felt very natural 
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+# Strech Goals
+* Updateing Ingredients and adding Ingredients to new cocktails 
+* Do a better image file upload input
+* Create a user page where they can see favorite cocktails 
+* Improve styleing and make mobile responsive 
+* add contact information on the biller 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+<!-- USAGE EXAMPLES -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+#Planning
+### Your project idea 
+A cocktail Recipe App. A user can login and register with the website. Create, read, update, and destroy cocktail recipes. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Your tech stack (frontend, backend, database)
+Express/node back-end
+React Front-end 
+Postgresql database 
 
-### `npm run build` fails to minify
+### List of backend models and their properties
+Routes 
+GET - /cocktails —- Get all cocktails 
+POST -/cocktails —-- add new cocktail
+GET - /cocktails/:id — cocktails Detail page 
+PUT - /cocktails/:id — update existing cocktail
+DELETE - /cocktails/:id —- delete a cocktail
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+POST - /user/:id — register a user
+
+
+Database Layout
+Cocktails 
+Primary Key 
+Foreign Key to User - Many to One 
+Title - Varchar(50)
+Description - Text 
+Ingredients ?
+Local storage/ session storage for users 
+
+
+
+React Pages 
+Log in / sign up page 
+Show all cocktails page 
+Cocktail Details page 
+Create New Cocktail page 
+Edit cocktail page 
+Delete cocktail button 
+User profile page 
+
+
+React Components 
+Nav bar with Home Cocktails Add Cocktail Sign-in buttons 
+Cocktail form- same for editing as adding 
+
+
+### React component hierarchy (if applicable)
+User budgets >- Budget >- expenses >- expense total  
+### User stories
+As a user I want to be able to log into the website
+As a user I want to be able to register to the website 
+As a user I want to see a list of all cocktails 
+As a user I want to see details of individual cocktails 
+As a user I want to add additional cocktails 
+As a user I want to update cocktails that I have created 
+As  a user I want to delete cocktails that I have created 
+As a user I want to rate and leave a comment on other peoples cocktails 
+
+
+
+
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- CONTACT -->
+## Contact
+Email : Broad0601@gmail.com
+LinkedIn: https://www.linkedin.com/in/benbroad21/
+
+
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
